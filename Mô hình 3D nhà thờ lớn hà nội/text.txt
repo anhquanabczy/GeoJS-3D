@@ -1,0 +1,80 @@
+Nhớ là đáy dày 2.4m
+chiều cao của 2 cột ban đầu như sau: tầng 1: 12m, tầng còn lại 10m
+chiều dài các mái
++ 2 bên : cao 13m - 24m tương đương 15.4 - 26.4
++ giữa 26 - 30m  tương đương 28.4 - 32.4
++ dài: 34 - 40m => 36.4 - 42.4
++ sau 12 - 16m => 14.4 - 18.4
+
+Để fill, trước hết cần có điểm trong thư mục location. Tiếp đến viết renderer của riêng glb đó (tham khảo trong code mẫu trên drive)
+Sau đó thì tạo 1 hàm  dạng như này 
+const statueConfigs = {
+    frontStatue: {heading: 45},
+    sideLeftStatue: {heading: 134},
+    sideRightStatue: {heading: -47},
+    behindStatue: {heading: -135}
+}
+
+const frontStatueRenderer = createStatueRenderer(statueConfigs.frontStatue);
+const sideLeftStatueRenderer = createStatueRenderer(statueConfigs.sideLeftStatue);
+const sideRightStatueRenderer = createStatueRenderer(statueConfigs.sideRightStatue);
+const behindStatueRenderer = createStatueRenderer(statueConfigs.behindStatue);
+
+rồi xuống cuối add geojson vào và hàm trên
+
+
+    map.add(createGeoJsonLayer("wall_line/statue_front", frontStatueRenderer));
+    map.add(createGeoJsonLayer("wall_line/statue_side_left", sideLeftStatueRenderer));
+    map.add(createGeoJsonLayer("wall_line/statue_side_right", sideRightStatueRenderer));
+    map.add(createGeoJsonLayer("wall_line/statue_behind", behindStatueRenderer));
+
+// +1
+// +0.2
+//+0.1
+// +0.1
+// +0.05
+// +0.03
+//+0.02
+
+44.7
+
+45.7
+45.9
+46
+46.1
+46.15
+46.18
+46.2
+
+  [105.84916691595531, 21.02870273936185, 44.7],
+  [105.84916691595531, 21.02870273936185, 45.7],
+  [105.84916676357881, 21.028702983101425, 45.9],
+  [105.84916661120232, 21.028703226841, 46],
+  [105.84916645882582, 21.028703470580574, 46.1],
+  [105.84916630644932, 21.028703714320145, 46.15],
+  [105.84916615407283, 21.02870395805972, 46.18],
+  [105.84916600169633, 21.028704201799293, 46.2],
+  [105.84916584931983, 21.028704445538867, 46.18],
+  [105.84916569694334, 21.02870468927844, 46.15],
+  [105.84916554456684, 21.028704933018012, 46.1],
+  [105.84916539219034, 21.028705176757587, 46],
+  [105.84916523981386, 21.02870542049716, 45.9],
+  [105.84916508743736, 21.028705664236735, 45.7],
+  [105.84916508743736, 21.028705664236735, 44.7]
+  //
+    [105.84916143040144, 21.028711513986504, 44.7],
+  [105.84916143040144, 21.028711513986504, 45.7],
+  [105.84916127802494, 21.02871175772608, 45.9],
+  [105.84916112564844, 21.028712001465653, 46],
+  [105.84916097327195, 21.028712245205227, 46.1],
+  [105.84916082089545, 21.028712488944798, 46.15],
+  [105.84916066851895, 21.028712732684372, 46.18],
+  [105.84916051614246, 21.028712976423947, 46.2],
+  [105.84916036376596, 21.02871322016352, 46.18],
+  [105.84916021138946, 21.028713463903095, 46.15],
+  [105.84916005901296, 21.028713707642666, 46.1],
+  [105.84915990663646, 21.02871395138224, 46],
+  [105.84915975425997, 21.028714195121815, 45.9],
+  [105.84915960188347, 21.02871443886139, 45.7],
+  [105.84915960188347, 21.02871443886139, 44.7]
+
